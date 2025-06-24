@@ -1,20 +1,22 @@
+#include "MachDeps.h"
+
 #include "HsFFI.h"
 
+#include <stdint.h>
+
+#if WORD_SIZE_IN_BYTES > 32
+#define HSINTTYPE int32_t
+#else
+#define HSINTTYPE int64_t
+#endif
+
 struct distrib {
-  StgInt64 count;
-  StgDouble mean;
-  StgDouble sum_sq_delta;
-  StgDouble sum;
-  StgDouble min;
-  StgDouble max;
-  volatile StgInt64 lock;
+  // 0 -> unlocked; 1 -> locked
+  HSINTTYPE lock;
+  int64_t count;
+  double mean;
+  double sum_sq_delta;
+  double sum;
+  double min;
+  double max;
 };
-
-void hs_distrib_add_n(struct distrib* distrib, StgDouble val, StgInt64 n);
-
-/*
- * Combine 'b' with 'a', writing the result in 'a'. Takes the lock of
- * 'b' while combining, but doesn't otherwise modify 'b'. 'a' is
- * assumed to not be used concurrently.
- */
-void hs_distrib_combine(struct distrib* b, struct distrib* a);
