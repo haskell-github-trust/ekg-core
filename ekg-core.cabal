@@ -1,6 +1,6 @@
 cabal-version:      1.18
 name:               ekg-core
-version:            0.1.1.8
+version:            0.1.2.0
 synopsis:           Tracking of system metrics
 description:        This library lets you defined and track system metrics.
 homepage:           https://github.com/tibbe/ekg-core

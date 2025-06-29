@@ -1,3 +1,7 @@
+## 0.1.2.0 (2025-06-29)
+
+ * Revamp counter and distribution implementation to work on more systems more accurately. ([#42](https://github.com/haskell-github-trust/ekg-core/pull/42))
+
 ## 0.1.1.8 (2024-10-31)
 
  * Support more modern GHCs more directly, and include nonmoving gc stats. ([#53](https://github.com/haskell-github-trust/ekg-core/pull/53))
