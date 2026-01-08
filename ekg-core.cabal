@@ -46,7 +46,7 @@ library
     System.Metrics.ThreadId
 
   build-depends:
-      base                  >=4.6 && <4.22
+      base                  >=4.6 && <4.23
     , containers            >=0.5 && <0.9
     , ghc-prim              >= 0.4 && < 0.14
     , text                  <2.2
